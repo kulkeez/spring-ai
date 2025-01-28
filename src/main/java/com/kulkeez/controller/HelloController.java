@@ -35,7 +35,7 @@ public class HelloController {
     	HashMap<String, String> map = new HashMap<>();
 
 	    map.put("Date", new Date().toString());
-	    map.put("Message", "Welcome to Generative AI world using ChatGPT!");
+	    map.put("Message", "Welcome to Generative AI world using Sspring AI!");
         	
         return map;
     }

@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
-Microservice Using ChatGPT and Spring
+Microservice Using ChatGPT and Spring AI
                                
 --------------------------------------------------------------------------
 Application Name : ${info.app.name}

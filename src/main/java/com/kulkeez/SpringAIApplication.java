@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @SpringBootApplication
 @Slf4j
-public class ChatGPTApplication {
+public class SpringAIApplication {
 
 	/**
 	 * 
@@ -36,7 +36,7 @@ public class ChatGPTApplication {
 		Timestamp tOne = new Timestamp(System.currentTimeMillis());
 
 		log.info("Launching the Spring Data application ...");
-		SpringApplication.run(ChatGPTApplication.class, args);
+		SpringApplication.run(SpringAIApplication.class, args);
 
 		log.info("Launched Spring Data application at time: {} ", tOne);
 	}
