@@ -1,8 +1,8 @@
-# spring-chatgpt
+# spring-ai
 Accelerator to kick-start development of applications using Spring AI and OpenAI API (GPT-3)
 OpenAI API offers models such as GPT, DALL-E and Whisper.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=668986834&machine=standardLinux32gb&location=SouthEastAsia)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=923390219&machine=standardLinux32gb&location=SouthEastAsia)
 ---
 ### OpenAI API Key
 To run this application, you will need to obtain OpenAI API keys and configure it within the application.properties file. 
