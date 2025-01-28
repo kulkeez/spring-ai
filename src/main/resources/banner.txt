@@ -1,0 +1,11 @@
+--------------------------------------------------------------------------
+Microservice Using ChatGPT and Spring
+                               
+--------------------------------------------------------------------------
+Application Name : ${info.app.name}
+Application Version : ${info.app.version}
+Spring Boot Version : ${spring-boot.version}
+Spring Boot Formatted Version : ${spring-boot.formatted-version}
+--------------------------------------------------------------------------
+Copyright: 2023 kulkeez@yahoo.com	
+--------------------------------------------------------------------------
