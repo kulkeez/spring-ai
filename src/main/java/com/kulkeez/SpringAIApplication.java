@@ -2,6 +2,7 @@ package com.kulkeez;
 
 import java.util.Arrays;
 import java.util.Locale;
+
 import java.text.NumberFormat;
 import java.sql.Timestamp;
 
@@ -35,10 +36,10 @@ public class SpringAIApplication {
 
 		Timestamp tOne = new Timestamp(System.currentTimeMillis());
 
-		log.info("Launching the Spring Data application ...");
+		log.info("Launching the Spring AI application ...");
 		SpringApplication.run(SpringAIApplication.class, args);
 
-		log.info("Launched Spring Data application at time: {} ", tOne);
+		log.info("Launched Spring AI application at time: {} ", tOne);
 	}
 
 	/**

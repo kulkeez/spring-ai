@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
-Microservice Using ChatGPT and Spring AI
+AI Agent Using LLM, Ollama and Spring AI
                                
 --------------------------------------------------------------------------
 Application Name : ${info.app.name}
@@ -7,5 +7,5 @@ Application Version : ${info.app.version}
 Spring Boot Version : ${spring-boot.version}
 Spring Boot Formatted Version : ${spring-boot.formatted-version}
 --------------------------------------------------------------------------
-Copyright: 2023 kulkeez@yahoo.com	
+Copyright: 2023-2025 kulkeez@yahoo.com	
 --------------------------------------------------------------------------
