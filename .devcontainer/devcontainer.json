@@ -3,10 +3,11 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-			"version": "17",
+			"version": "21",
 			"installMaven": "true",
 			"installGradle": "false"
-		},        
+		},
+		"ghcr.io/prulloac/devcontainer-features/ollama:1": {},
 		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
   },
   
