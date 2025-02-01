@@ -27,14 +27,26 @@ public class DataLoader {
 
     private final JdbcClient jdbcClient;
 
-    @Value("classpath:/Test.pdf")
+    @Value("classpath:/JMeter_Manual.pdf")
     private Resource pdfResource;
 
+    /**
+     * Constructor based dependency injection
+     * 
+     * @param vectorStore
+     * @param jdbcClient
+     */
     public DataLoader(VectorStore vectorStore, JdbcClient jdbcClient) {
         this.vectorStore = vectorStore;
         this.jdbcClient = jdbcClient;
     }
     
+
+    /**
+     * 
+     * Method to load the PDF into the PG Vector Store
+     * 
+     */
     @PostConstruct
     public void init() {
         log.debug("init() called.");
@@ -59,5 +71,8 @@ public class DataLoader {
 
             log.info("PG Vector Store loaded with the PDF supplied.");
         }
+        else {
+            log.info("PG Vector Store already loaded with the PDF supplied.");
+        }   
     }
 }
