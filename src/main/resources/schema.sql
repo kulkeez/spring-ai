@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS vector_store (
 	embedding vector(1536)
 );
 
-CREATE INDEX ON vector_store USING HNSW (embedding vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS spring_ai_vector_index ON vector_store USING HNSW (embedding vector_cosine_ops);

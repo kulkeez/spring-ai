@@ -12,13 +12,14 @@ The Codespaces for this repo pre-installs [Ollama](https://ollama.com/). However
 ```bash
 ollama pull deepseek-r1:1.5b
 ```
----
 
 For the RAG (Retrieval-Augmented Generation) implementation, pull the latest Mistral model which is 4.1 GB in size using the command below.
+
 ```bash
 ollama pull mistral:latest
 ```
 You should be able to list the models and the Docker image for PostgreSQL 16.4 as shown below:
+
 ```
 @kulkeez ➜ /workspaces/spring-ai (master) $ ollama list
 NAME                ID              SIZE      MODIFIED    
@@ -32,19 +33,64 @@ pgvector/pgvector   pg16      c0fb89364d78   3 months ago   435MB
 
 ---
 ### Want to run it?
+
 This Spring AI application can be launched from command-line by the developer using the command: ```mvn spring-boot:run ```
 On launching the application the first time, the Postgre Vector database Docker image is pulled and started.
+
 ---
 
 ### Query this AI application
+
 Launch any web browser and invoke this application with a prompt text. Example: http://localhost:8080/twister?message=Tell me a tongue twister
 
+--- 
+
+### Debugging
+
+If the application doesn't boot up and throws SQL Exceptions, you can review the 
+PostGres database by logging into the Docker container using the following commands to recreate the Table and index:
+
+```
+@kulkeez ➜ /workspaces/spring-ai (master) $ docker exec -it spring-ai-pgvector-1 bash
+root@b4324bb6f9f8:/# psql -h localhost -U postgres --password -d aidemo
+Password: 
+psql (16.4 (Debian 16.4-1.pgdg120+2))
+Type "help" for help.
+
+aidemo=# 
+aidemo-# 
+aidemo-# \d vector_store
+ id        | uuid         |           | not null | uuid_generate_v4()
+ content   | text         |           |          | 
+ metadata  | json         |           |          | 
+ embedding | vector(4096) |           |          | 
+
+aidemo-# 
+aidemo=# drop table vector_store;
+DROP TABLE
+aidemo=#
+aidemo=# CREATE TABLE IF NOT EXISTS vector_store (
+        id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+        content text,
+        metadata json,
+        embedding vector(1536)
+);
+CREATE TABLE
+aidemo=#
+aidemo=# CREATE INDEX IF NOT EXISTS spring_ai_vector_index ON vector_store USING HNSW (embedding vector_cosine_ops);
+CREATE INDEX
+aidemo=#
+```
 
 ## Further Learning
 
 ### Books
 
 - ["Spring AI in Action" by Craig Walls (Manning)](https://www.manning.com/books/spring-ai-in-action)
+
+### Videos
+
+- [RAG implementation in Java using Spiring AI](https://www.youtube.com/watch?v=6Pgmr7xMjiY)
 
 ### Spring AI Documentation
 

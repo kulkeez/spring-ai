@@ -12,7 +12,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Component;
 
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -35,7 +34,7 @@ public class DataLoader {
         this.vectorStore = vectorStore;
         this.jdbcClient = jdbcClient;
     }
-
+    
     @PostConstruct
     public void init() {
         log.debug("init() called.");
@@ -58,7 +57,7 @@ public class DataLoader {
             var textSplitter = new TokenTextSplitter();
             vectorStore.accept(textSplitter.apply(reader.get()));
 
-            log.info("Application is ready to answer JMeter questions using the PDF supplied.");
+            log.info("PG Vector Store loaded with the PDF supplied.");
         }
     }
 }
