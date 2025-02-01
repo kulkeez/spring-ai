@@ -2,6 +2,8 @@ package com.kulkeez.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author <a href="mailto:kulkeez@yahoo.com">Vikram Kulkarni</a>
  *
  */
+@Slf4j
 @RestController
 public class HelloController {
 
@@ -30,7 +33,7 @@ public class HelloController {
 	 * @return
 	 */
 	public Map<String, String> index() {
-        
+        log.debug("index() called.");
     	// create mock/hard-coded JSON structure containing Greetings
     	HashMap<String, String> map = new HashMap<>();
 
