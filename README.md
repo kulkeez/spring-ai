@@ -43,6 +43,25 @@ On launching the application the first time, the Postgre Vector database Docker 
 
 Launch any web browser and invoke this application with a prompt text. Example: http://localhost:8080/twister?message=Tell me a tongue twister
 
+You can use HTTPie to check if the application is ready.
+```
+@kulkeez ➜ /workspaces/spring-ai (master) $ http :8080/
+HTTP/1.1 200 
+Connection: keep-alive
+Content-Type: application/json
+Date: Sat, 01 Feb 2025 14:01:58 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "Date": "Sat Feb 01 14:01:58 UTC 2025",
+    "Message": "Welcome to Generative AI world using Spring AI!"
+}
+
+
+@kulkeez ➜ /workspaces/spring-ai (master) $ 
+```
+
 --- 
 
 ### Debugging
@@ -98,3 +117,11 @@ aidemo=#
 - [Spring AI Reference Documentation](https://docs.spring.io/spring-ai/reference/)
 - [Spring AI API Documentation](https://docs.spring.io/spring-ai/docs/1.0.0-SNAPSHOT/api/)
 - [Spring AI Playground](https://github.com/JM-Lab/spring-ai-playground) - A web UI designed to make it easy for Java developers to experiment with and integrate AI models.
+
+### Articles
+
+- [Spring AI with Vector Databases](https://docs.rapidapp.io/blog/integrating-spring-ai-with-vector-databases) - Integrating Spring AI with Vector Databases - A Guide Using PGVector
+
+### Tools
+
+- [HTTPie](https://httpie.io/cli) - HTTPie (pronounced aitch-tee-tee-pie) is a command-line HTTP client.
