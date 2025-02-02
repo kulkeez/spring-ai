@@ -70,7 +70,11 @@ If the application doesn't boot up and throws SQL Exceptions, you can review the
 PostGres database by logging into the Docker container using the following commands to recreate the Table and index:
 
 ```
-@kulkeez ➜ /workspaces/spring-ai (master) $ docker exec -it spring-ai-pgvector-1 bash
+@kulkeez ➜ /workspaces/spring-ai (master) $ docker ps 
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                                           NAMES
+439dcc7172e6   pgvector/pgvector:pg16   "docker-entrypoint.s…"   43 minutes ago   Up 25 seconds   0.0.0.0:32768->5432/tcp, [::]:32768->5432/tcp   pgvector
+@kulkeez ➜ /workspaces/spring-ai (master) $
+@kulkeez ➜ /workspaces/spring-ai (master) $ docker exec -it pgvector bash
 root@b4324bb6f9f8:/# psql -h localhost -U postgres --password -d aidemo
 Password: 
 psql (16.4 (Debian 16.4-1.pgdg120+2))
@@ -109,7 +113,10 @@ aidemo=#
 
 ### Videos
 
-- [RAG implementation in Java using Spiring AI](https://www.youtube.com/watch?v=6Pgmr7xMjiY)
+- [RAG implementation in Java using Spring AI](https://www.youtube.com/watch?v=6Pgmr7xMjiY)
+- [Java RAG made easy with SpringAI and Elasticsearch](https://www.youtube.com/watch?v=H1417MoUI20)
+- [Use RAG developed in Python to chat with PDFs using Deepseek, Langchain and Streamlit](https://www.youtube.com/watch?v=M6vZ6b75p9k)
+- [How to Use DeepSeek's R1 Model in Java & Spring | Local & API Implementation](https://www.youtube.com/watch?v=TWlBGA3x3cQ)
 
 ### Spring AI Documentation
 
@@ -121,6 +128,7 @@ aidemo=#
 ### Articles
 
 - [Spring AI with Vector Databases](https://docs.rapidapp.io/blog/integrating-spring-ai-with-vector-databases) - Integrating Spring AI with Vector Databases - A Guide Using PGVector
+- [Create a RAG (Retrieval Augmented Generation) Application with Redis and Spring AI](https://www.baeldung.com/spring-ai-redis-rag-app)
 
 ### Tools
 
