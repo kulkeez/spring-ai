@@ -1,6 +1,7 @@
 services:
   pgvector:
     image: 'pgvector/pgvector:pg16'
+    container_name: pgvector
     environment:
       - 'POSTGRES_DB=aidemo'
       - 'POSTGRES_PASSWORD=postgres'
