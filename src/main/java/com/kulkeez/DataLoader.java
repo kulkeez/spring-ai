@@ -67,7 +67,16 @@ public class DataLoader {
                     = new PagePdfDocumentReader(pdfResource, config);
 
             var textSplitter = new TokenTextSplitter();
-            vectorStore.accept(textSplitter.apply(reader.get()));
+            var vectors = textSplitter.apply(reader.get());
+
+            // Log the dimensions of the vectors
+/*             if (vectors != null && !vectors.isEmpty()) {
+                log.info("Vector dimensions: {}", vectors.get(0).getDimensions());
+            } else {
+                log.warn("No vectors generated or vectors list is empty.");
+            } */
+
+            vectorStore.accept(vectors);
 
             log.info("PG Vector Store loaded with the PDF supplied.");
         }
